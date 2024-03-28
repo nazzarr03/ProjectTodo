@@ -100,3 +100,4 @@
 /home/nazar/Desktop/ProjectTodo/ToDoProject/obj/Debug/net8.0/ToDoProject.pdb
 /home/nazar/Desktop/ProjectTodo/ToDoProject/obj/Debug/net8.0/ToDoProject.genruntimeconfig.cache
 /home/nazar/Desktop/ProjectTodo/ToDoProject/obj/Debug/net8.0/ref/ToDoProject.dll
+/home/nazar/Desktop/ProjectTodo/ToDoProject/obj/Debug/net8.0/ToDoProject.sourcelink.json

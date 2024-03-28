@@ -31,10 +31,10 @@ public class CategoriesController : Controller
     
             await _context.SaveChangesAsync();
             _logger.LogInformation( $" {category.Name}:This named category successfully created.");
-            return RedirectToAction("Index");// burası da düzenlenebilir.
+            return RedirectToAction("Index");
         }
         
-        return RedirectToAction("Create"); // burası düzenlenecek
+        return RedirectToAction("Create");
     }
 
     public async Task<ActionResult> Update(int id)
@@ -43,7 +43,7 @@ public class CategoriesController : Controller
         if (category == null)
         {
             _logger.LogError($"Received null category.");
-            return RedirectToAction("Index"); // category sayfası olacak.
+            return RedirectToAction("Index");
         }
         return View(category);
     }
@@ -73,7 +73,7 @@ public class CategoriesController : Controller
             }
             _logger.LogInformation( $" {category.Name}:This named category successfully updated.");
 
-            return RedirectToAction("Index"); // category sayfasına gidecek.
+            return RedirectToAction("Index");
         }
 
         return View(category);
@@ -91,7 +91,7 @@ public class CategoriesController : Controller
         _context.Categories.Remove(category);
         _context.SaveChanges();
 
-        return RedirectToAction("Index"); // category sayfasına gidecek.
+        return RedirectToAction("Index");
     }
 
     private List<Category> GetAllCategories()

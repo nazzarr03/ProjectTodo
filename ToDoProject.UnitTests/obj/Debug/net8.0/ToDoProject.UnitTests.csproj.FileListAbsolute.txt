@@ -126,3 +126,4 @@
 /home/nazar/Desktop/ProjectTodo/ToDoProject.UnitTests/bin/Debug/net8.0/Moq.EntityFramework.Helpers.dll
 /home/nazar/Desktop/ProjectTodo/ToDoProject.UnitTests/bin/Debug/net8.0/Moq.EntityFrameworkCore.dll
 /home/nazar/Desktop/ProjectTodo/ToDoProject.UnitTests/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll
+/home/nazar/Desktop/ProjectTodo/ToDoProject.UnitTests/obj/Debug/net8.0/ToDoProject.UnitTests.sourcelink.json
