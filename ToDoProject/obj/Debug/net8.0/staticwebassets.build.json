@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "mtalcgIk8WRn4Dum5vI6ujlBPyKNfRHjdegSoxBV6hI=",
+  "Source": "ToDoProject",
+  "BasePath": "_content/ToDoProject",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ToDoProject/wwwroot",
+      "Source": "ToDoProject",
+      "ContentRoot": "/home/nazar/Desktop/ProjectTodo/ToDoProject/wwwroot/",
+      "BasePath": "_content/ToDoProject",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}

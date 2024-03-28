@@ -1,0 +1,95 @@
+@{
+    Layout = "_Layout";
+}
+
+@model ToDoProject.Models.Todo
+
+<style>
+    body {
+        background-color: #f0f0f0; /* Arka plan rengi */
+    }
+
+    .container {
+        width: 70%; /* Sayfa genişliği */
+        margin-top: 5%;
+        
+    }
+
+    .form-group {
+        margin-bottom: 20px; /* Form grupları arasında boşluk */
+    }
+
+    h4 {
+        margin-bottom: 50px;
+        text-align: center; /* Başlıkı ortala */
+        font-size: 2rem;
+    }
+
+    label {
+        font-weight: bold; /* Label yazı tipi kalın */
+    }
+
+    input[type="text"] {
+        width: 100%; /* Text input genişliği */
+        padding: 10px; /* Text input içeriği için boşluk */
+        font-size: 16px; /* Text input yazı boyutu */
+        border-radius: 5px; /* Text input köşeleri yuvarlatılsın */
+        border: 1px solid #ccc; /* Text input kenarlığı */
+        margin-bottom: 40px;
+    }
+
+    .btn-primary {
+        background-color: #007bff; /* Primary buton arka plan rengi */
+        color: #fff; /* Primary buton yazı rengi */
+        border: none; /* Primary buton kenarlığı olmasın */
+        border-radius: 5px; /* Primary buton köşeleri yuvarlatılsın */
+        padding: 10px 20px; /* Primary buton içeriği için boşluk */
+        font-size: 16px; /* Primary buton yazı boyutu */
+        cursor: pointer; /* Primary buton üzerine geldiğinde işaretçi şekli el simgesi olsun */
+        margin-right: 10px; /* Primary buton sağdan boşluk */
+    }
+
+    .btn-secondary {
+        background-color: #6c757d; /* Secondary buton arka plan rengi */
+        color: #fff; /* Secondary buton yazı rengi */
+        border: none; /* Secondary buton kenarlığı olmasın */
+        border-radius: 5px; /* Secondary buton köşeleri yuvarlatılsın */
+        padding: 10px 20px; /* Secondary buton içeriği için boşluk */
+        font-size: 16px; /* Secondary buton yazı boyutu */
+        cursor: pointer; /* Secondary buton üzerine geldiğinde işaretçi şekli el simgesi olsun */
+    }
+
+    .btn-group {
+        margin-left: 60px;
+        width: 70%;
+        margin-top: 50px;
+    }
+</style>
+
+<div class="mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h4>Update Task</h4>
+                @using (Html.BeginForm("Update", "Todos"))
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Title, new { @class = "form-control", placeholder = "Please enter the title" })
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DueDate, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.DueDate, "{0:yyyy-MM-dd HH:mm}", new { @class = "form-control", type = "datetime-local" })
+                        @Html.ValidationMessageFor(model => model.DueDate, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary mr-2">Update Task</button>
+                        @Html.ActionLink("Show All Items", "Index", "Todos", null, new { @class = "btn btn-secondary" })
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

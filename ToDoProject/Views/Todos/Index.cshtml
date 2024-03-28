@@ -1,0 +1,129 @@
+
+@{
+    Layout = "_Layout";
+}
+
+@using ToDoProject.Models;
+
+<style>
+    body {
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    #todo-list {
+        text-align: left;
+        padding: 0;
+    }
+
+    .todo-item {
+        list-style-type: none;
+        margin-bottom: 10px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .todo-item span {
+        width: 100%;
+        margin-right: 20px;
+    }
+
+    .due-date {
+        margin-left: auto;
+        color: #888;
+        font-size: 14px;
+    }
+
+    #add-new-item {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #add-new-item:hover {
+        background-color: #0056b3;
+    }
+
+    h1 {
+        text-align: center;
+    }
+</style>
+<div>
+    <h1 class="text-secondary">My Todos</h1>
+</div>
+<div class="container">
+    <ul id="todo-list">
+        @foreach (var todo in Model)
+        {
+            <li class="todo-item">
+                <div class="d-flex">
+                    <input type="checkbox" class="completed-checkbox mx-2" data-id="@todo.Id" />
+                    <div class="d-flex flex-column">
+                        <span>@todo.Title</span>
+                        <span class="due-date">Due: @todo.DueDate.ToString()</span>
+                    </div>
+                    </div>
+                <div>
+                    <a href="@Url.Action("Update", "Todos", new { id = todo.Id })" class="btn btn-primary">Update</a>
+                </div>
+            </li>
+        }
+    </ul>
+
+    <div>
+        <button id="add-new-item">Add New Item</button>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.completed-checkbox').change(function () {
+                var todoId = $(this).data('id');
+                var isChecked = $(this).is(':checked');
+                if (isChecked) {
+                    if (confirm("Are you sure you completed this task?")) {
+                        deleteTodo(todoId);
+                    } else {
+                        $(this).prop('checked', false);
+                    }
+                }
+            });
+
+            function deleteTodo(todoId) {
+                $.ajax({
+                    url: '@Url.Action("Delete", "Todos")',
+                    type: 'POST',
+                    data: { id: todoId },
+                    success: function (response) {
+                        if (response.ok) {
+                            $('#todo-list li input[data-id="' + todoId + '"]').parent().remove();
+                        } else {
+                            window.location.reload()    
+                        }
+                    }
+                });
+            }
+
+            $('#add-new-item').click(function () {
+                window.location.href = '@Url.Action("Create", "Todos")';
+            });
+        });
+    </script>
+}

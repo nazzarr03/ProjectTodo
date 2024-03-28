@@ -1,0 +1,80 @@
+@{
+    Layout = "_Layout";
+}
+
+@model ToDoProject.Models.Category
+
+<style>
+    body {
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        width: 70%;
+        margin-top: 5%;
+        
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    h4 {
+        margin-bottom: 50px;
+        text-align: center;
+        font-size: 2rem;
+    }
+    
+    label {
+        font-weight: bold;
+    }
+    
+    input[type="text"] {
+        width: 100%; 
+        padding: 10px; 
+        font-size: 16px; 
+        border-radius: 5px; 
+        border: 1px solid #ccc;
+        margin-bottom: 40px;
+    }
+    
+    .btn-primary {
+        background-color: #007bff; 
+        color: #fff; 
+        border: none;
+        border-radius: 5px; 
+        padding: 10px 20px; 
+        font-size: 16px; 
+        cursor: pointer; 
+        margin-right: 10px;
+    }
+    
+    .btn-group {
+        margin-left: 60px;
+        width: 70%;
+        margin-top: 20px;
+    }
+</style>
+
+<div class="mt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h4>Add a New Category</h4>
+                @using (Html.BeginForm("Create", "Categories"))
+                {
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = "Please enter the name"})
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger"})
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary mr-2">Add New Category</button>
+                        @Html.ActionLink("Show All Categories", "Index", "Categories", null, new { @class = "btn btn-secondary" })
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

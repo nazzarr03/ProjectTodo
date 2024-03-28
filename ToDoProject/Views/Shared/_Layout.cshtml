@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My To-Do List!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/styles.css">
+    <style>
+    nav {
+      display: flex; /* 1 */
+      justify-content: space-between; /* 2 */
+      padding: 1rem 2rem; /* 3 */
+      background: #cfd8dc; /* 4 */
+    }
+    
+    nav ul {
+      display: flex; /* 5 */
+      list-style: none; /* 6 */
+    }
+    
+    nav li {
+      padding-left: 1rem; /* 7! */
+    }
+        body {
+            background-color: #f0f0f0;
+        }
+    
+        .container {
+            width: 70%;
+            margin-top: 5%;
+            
+        }
+    
+        .form-group {
+            margin-bottom: 20px;
+        }
+    
+        h4 {
+            margin-bottom: 50px;
+            text-align: center;
+            font-size: 2rem;
+        }
+    
+        label {
+            font-weight: bold;
+        }
+    
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 40px;
+        }
+    
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+    
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    
+        .btn-group {
+            margin-left: 60px;
+            width: 70%;
+            margin-top: 50px;
+        }
+    </style>
+  </head>
+<body>
+<nav>
+  <h2>TodoList</h2>
+  <ul>
+    <li><a href="/Todos">Todos</a></li>
+    <li><a href="/Categories">Categories</a></li>
+  </ul>
+</nav>
+@RenderBody()
+@await Html.PartialAsync("Footer")
+@RenderSection("Scripts", required: false)
+</body>
+</html>

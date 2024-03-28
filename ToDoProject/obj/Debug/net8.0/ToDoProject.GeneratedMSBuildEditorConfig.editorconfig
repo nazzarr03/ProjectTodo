@@ -1,0 +1,55 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ToDoProject
+build_property.RootNamespace = ToDoProject
+build_property.ProjectDir = /home/nazar/Desktop/ProjectTodo/ToDoProject/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/nazar/Desktop/ProjectTodo/ToDoProject
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/nazar/Desktop/ProjectTodo/ToDoProject/Views/Categories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcmllcy9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nazar/Desktop/ProjectTodo/ToDoProject/Views/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcmllcy9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nazar/Desktop/ProjectTodo/ToDoProject/Views/Categories/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2F0ZWdvcmllcy9VcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nazar/Desktop/ProjectTodo/ToDoProject/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nazar/Desktop/ProjectTodo/ToDoProject/Views/Shared/Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Zvb3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nazar/Desktop/ProjectTodo/ToDoProject/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nazar/Desktop/ProjectTodo/ToDoProject/Views/Todos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kb3MvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nazar/Desktop/ProjectTodo/ToDoProject/Views/Todos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kb3MvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/nazar/Desktop/ProjectTodo/ToDoProject/Views/Todos/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVG9kb3MvVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

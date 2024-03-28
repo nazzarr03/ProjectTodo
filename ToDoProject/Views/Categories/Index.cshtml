@@ -1,0 +1,118 @@
+
+@{
+    Layout = "_Layout";
+}
+
+<style>
+    body {
+        background-color: #f0f0f0;
+    }
+
+    .container {
+        width: 70%;
+        margin: 0 auto;
+    }
+    
+    #category-list {
+        text-align: left;
+        padding: 0;
+    }
+    
+    .category-item {
+        list-style-type: none;
+        margin-bottom: 10px;
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .category-item span {
+        width: 100%;
+        margin-right: 20px;
+        font-size: 1.5rem;
+    }
+    
+    #add-new-category {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #add-new-category:hover {
+        background-color: #0056b3;
+    }
+
+    h1 {
+        text-align: center;
+    }
+</style>
+<div>
+    <h1 class="text-secondary">Categories</h1>
+</div>
+<div class="container">
+    <ul id="category-list">
+        @foreach (var category in Model)
+        {
+            <li class="category-item">
+                <div class="d-flex">
+                    <button class="btn btn-success complete-category-btn mx-2" data-id="@category.Id">Delete</button>
+                    <div class="d-flex flex-column">
+                        <span>@category.Name</span>
+                    </div>
+                    </div>
+                <div>
+                </div>
+            </li>
+        }
+    </ul>
+    <div>
+        <button id="add-new-category">Add New Category</button>
+
+    </div>
+</div>
+@section Scripts {  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.complete-category-btn').click(function () {
+            var categoryId = $(this).data('id');
+            if (confirm("Are you sure you deleted this category?")) {
+                deleteCategory(categoryId);
+            } 
+            else {
+            $(this).prop('deleted', false);
+            }
+            });
+            
+            function deleteCategory(todoId) {
+                $.ajax({
+                    url: '@Url.Action("Delete", "Categories")',
+                    type: 'POST',
+                    data: { id: todoId },
+                    success: function (response) {
+                        if (response.ok) {
+                            $('#category-list li button[data-id="' + categoryId + '"]').parent().remove();
+                        } 
+                        else {
+                            window.location.reload();
+                        }
+                    }
+                });
+            }
+
+            $('#add-new-category').click(function () {
+                window.location.href = '@Url.Action("Create", "Categories")';
+            });
+        });
+    </script>
+}
